@@ -10,7 +10,9 @@ function ThemeList() {
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
-    if (theme == null) {
+    if (!theme) {
+      changeTheme("light")
+      document.documentElement.setAttribute("data-theme", "light");
       return;
     }
     changeTheme(theme);
