@@ -34,11 +34,11 @@ function ThemeList() {
         </li>
         <li>
           <button
-            data-set-theme="emerald"
+            data-set-theme="retro"
             data-act-class="ACTIVECLASS"
-            onClick={() => changeTheme("emerald")}
+            onClick={() => changeTheme("retro")}
           >
-            Emerald
+            Retro
           </button>
         </li>
         <li>

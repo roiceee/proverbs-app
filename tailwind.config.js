@@ -11,6 +11,6 @@ export default {
     require("tailwindcss-animate"),
   ],
   daisyui: {
-    themes: ["light", "dark", "emerald", "night"],
+    themes: ["light", "dark", "retro", "night"],
   },
 };
