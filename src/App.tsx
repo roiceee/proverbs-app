@@ -9,6 +9,8 @@ import { Route, Routes } from "react-router";
 import Application from "./pages/app.tsx";
 import ErrorPage from "./pages/error-page.tsx";
 import Footer from "./components/footer.tsx";
+import AppHome from "./pages/app-pages/app-home.tsx";
+import ChapterPage from "./pages/app-pages/chapter-page.tsx";
 
 function App() {
   useEffect(() => {
@@ -27,11 +29,14 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/app" element={<Application />} />
+        <Route path="/app" element={<Application />}>
+          <Route path="" element={<AppHome />} />
+          <Route path=":id" element={<ChapterPage />} />
+        </Route>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
 
-      <Footer/>
+      <Footer />
     </main>
   );
 }

@@ -10,6 +10,10 @@ function MenuList() {
     return str === activePath;
   }
 
+  const containsPath = (str: string) => {
+    return activePath.includes(str);
+  }
+
   const location = useLocation();
 
 
@@ -23,7 +27,7 @@ function MenuList() {
       <li className={isActivePath("/") ? "text-accent": ""}>
         <Link to={"/"}>Home</Link>
       </li>
-      <li className={isActivePath("/app") ? "text-accent": ""}>
+      <li className={containsPath("/app") ? "text-accent": ""}>
         <Link to={"/app"}>App</Link>
       </li>
     </>
