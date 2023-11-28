@@ -5,7 +5,7 @@ function SearchBar() {
 
   return (
     <div className=" mt-10">
-      <div className="join">
+      <div className="join w-full">
         <input
           type="text"
           placeholder={`Enter ${searchType}`}

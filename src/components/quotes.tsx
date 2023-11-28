@@ -7,7 +7,12 @@ interface QuoteType {
   text: string;
 }
 
-function Quotes() {
+interface QuotesProps {
+  quoteClassName?: string;
+  verseClassName?: string;
+}
+
+function Quotes({ quoteClassName, verseClassName }: QuotesProps) {
   const rand = useRef(Math.floor(Math.random() * quotes.length));
 
   const [divClass, setDivClass] = useState<string>(
@@ -37,8 +42,8 @@ function Quotes() {
   return (
     <div className={divClass}>
       <i>
-        <p className="text-xl md:text-2xl">{currentQuote.text}</p>
-        <p className="text- md:text-xl">
+        <p className={`${quoteClassName? quoteClassName : "text-xl md:text-2xl"}`}>{currentQuote.text}</p>
+        <p className={`${verseClassName? verseClassName: "text-lg md:text-xl"}`}>
           Proverbs {currentQuote.chapter}:{currentQuote.verse}
         </p>
       </i>
