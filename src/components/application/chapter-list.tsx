@@ -5,8 +5,8 @@ function ChapterList() {
     return (
       <div className="flex flex-wrap justify-center mt-8">
         {Array.from(Array(chapters).keys()).map((_, i) => (
-          <div>
-            <button key={i} className="btn btn-outline btn-lg rounded-btn m-1 w-16 h-16">
+          <div key={"div-" + i}>
+            <button key={"but-" + i} className="btn btn-outline btn-lg rounded-btn m-1 w-16 h-16">
               {i + 1}
             </button>
           </div>
