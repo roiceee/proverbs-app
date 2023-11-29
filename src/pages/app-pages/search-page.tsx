@@ -66,6 +66,8 @@ function SearchPage() {
     return searchResult;
   };
 
+  const res = results();
+
   return (
     <div>
       <div>
@@ -95,7 +97,7 @@ function SearchPage() {
 
       <div className="mt-6">
         <h2>
-          Results for: <b>{search}</b>
+          Results for: <b>{`${search} (${res?.length} results)`}</b>
         </h2>
       </div>
 
@@ -119,7 +121,7 @@ function SearchPage() {
       </div>
 
       <div className="mt-6">
-        {results()?.map((result, index) => {
+        {res?.map((result, index) => {
           return (
             <div key={index} className=" py-4 border-b ">
               <div className="flex flex-row justify-between">
