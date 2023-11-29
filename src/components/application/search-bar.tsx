@@ -1,25 +1,25 @@
 import { useState } from "react";
 
 function SearchBar() {
-  const [searchType, setSearchType] = useState<"text" | "keyword">("text");
+  const [searchText, setSearchText] = useState("");
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchText(e.target.value);
+  };
 
   return (
     <div className=" mt-10">
+      <div className="label">
+        <span className="label-text">Search Proverbs</span>
+      </div>
       <div className="join w-full">
         <input
+          value={searchText}
+          onChange={handleSearch}
           type="text"
-          placeholder={`Enter ${searchType}`}
+          placeholder={`Enter text or keyword`}
           className="input input-bordered rounded-r-none join-item w-full"
         />
-
-        <select
-          defaultValue={"text"}
-          className="select select-bordered join-item"
-          onChange={(e) => setSearchType(e.target.value as "text" | "keyword")}
-        >
-          <option value="text">Text</option>
-          <option value="keyword">Keyword</option>
-        </select>
 
         <button className="btn btn-accent rounded-l-none join-item">
           <svg
