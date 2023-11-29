@@ -44,12 +44,13 @@ function ChapterPage() {
           ))}
         </div>
 
-        <hr className="mt-6" />
-        <NavButtons
-          id={id}
-          disableNext={parseInt(id) === 31}
-          disablePrev={parseInt(id) === 1}
-        />
+        <div className="mt-10">
+          <NavButtons
+            id={id}
+            disableNext={parseInt(id) === 31}
+            disablePrev={parseInt(id) === 1}
+          />
+        </div>
       </section>
     </div>
   );
