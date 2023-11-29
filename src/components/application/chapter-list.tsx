@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import data from "../../assets/proverbs.json";
 
 function ChapterList() {
   const history = useNavigate();
@@ -7,7 +8,7 @@ function ChapterList() {
     history("/app/" + chapterNumber);
   };
 
-  const chapters = 31;
+  const chapters = data.length;
 
   const chapterButtons = () => {
     return (
