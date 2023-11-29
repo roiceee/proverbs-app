@@ -5,7 +5,7 @@ function ChapterList() {
   const history = useNavigate();
 
   const handleClick = (chapterNumber: number) => {
-    history("/app/" + chapterNumber);
+    history("/app/chapter/" + chapterNumber);
   };
 
   const chapters = data.length;

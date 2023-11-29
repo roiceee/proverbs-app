@@ -20,7 +20,7 @@ function App() {
 
   return (
     <main>
-      <ScrollToTop/>
+      <ScrollToTop />
       <Helmet>
         <title>Proverbs App | Home</title>
       </Helmet>
@@ -33,7 +33,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/app" element={<Application />}>
           <Route path="" element={<AppHome />} />
-          <Route path=":id" element={<ChapterPage />} />
+          <Route path="chapter">
+            <Route path=":id" element={<ChapterPage />} />
+          </Route>
         </Route>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
