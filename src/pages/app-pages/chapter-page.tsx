@@ -12,7 +12,7 @@ function ChapterPage() {
     return <div>Error Page</div>;
   }
 
-  if (isNaN(parseInt(id)) || !data[parseInt(id)]) {
+  if (isNaN(parseInt(id)) || !data[parseInt(id) - 1]) {
     //make this a 404 page and have a link to the home page
     return (
       <div className="flex justify-center items-center my-56">
