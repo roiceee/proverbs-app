@@ -11,6 +11,7 @@ import ErrorPage from "./pages/error-page.tsx";
 import Footer from "./components/footer.tsx";
 import AppHome from "./pages/app-pages/app-home.tsx";
 import ChapterPage from "./pages/app-pages/chapter-page.tsx";
+import ScrollToTop from "./components/scroll-to-top.tsx";
 
 function App() {
   useEffect(() => {
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <main>
+      <ScrollToTop/>
       <Helmet>
         <title>Proverbs App | Home</title>
       </Helmet>

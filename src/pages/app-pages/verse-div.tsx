@@ -5,7 +5,7 @@ interface VerseDivProps {
   chapter: number;
   verse: number;
   text: string;
-  keywords: string[];
+  keywords: string;
 }
 
 function VerseDiv({ chapter, verse, text, keywords }: VerseDivProps) {
@@ -47,9 +47,9 @@ function VerseDiv({ chapter, verse, text, keywords }: VerseDivProps) {
             </svg>
           )}
         </button>
-        <p className="text-lg">{text}</p>
+        <p className="text-md">{text}</p>
         <p className="text-sm text-gray-500 mt-2">
-          Keywords: {keywords.join(", ")}
+          Keywords: {keywords}
         </p>
       </div>
     </CopyToClipboard>
