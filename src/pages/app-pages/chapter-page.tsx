@@ -24,7 +24,11 @@ function ChapterPage() {
   return (
     <div className="mt-8 px-2 container mx-auto">
       <section>
-        <NavButtons id={id} />
+        <NavButtons
+          id={id}
+          disableNext={parseInt(id) === 31}
+          disablePrev={parseInt(id) === 1}
+        />
         <h1 className="mt-8 text-4xl font-bold text-center mb-4">
           Proverbs {id}
         </h1>
@@ -41,7 +45,11 @@ function ChapterPage() {
         </div>
 
         <hr className="mt-6" />
-        <NavButtons id={id} />
+        <NavButtons
+          id={id}
+          disableNext={parseInt(id) === 31}
+          disablePrev={parseInt(id) === 1}
+        />
       </section>
     </div>
   );
