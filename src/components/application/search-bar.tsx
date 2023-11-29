@@ -1,14 +1,26 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 function SearchBar() {
+  const router = useNavigate();
+
   const [searchText, setSearchText] = useState("");
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
   };
 
+  const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (searchText) {
+      router("/app/search?q=" + searchText);
+      setSearchText("");
+    }
+  };
+
   return (
-    <div className=" mt-10">
+    <form onSubmit={handleSearchSubmit}>
       <div className="label">
         <span className="label-text">Search Proverbs</span>
       </div>
@@ -38,7 +50,7 @@ function SearchBar() {
           </svg>
         </button>
       </div>
-    </div>
+    </form>
   );
 }
 

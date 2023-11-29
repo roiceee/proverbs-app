@@ -23,7 +23,7 @@ function VerseDiv({ chapter, verse, text, keywords }: VerseDivProps) {
       text={`Proverbs ${chapter}:${verse} - ${text}`}
       onCopy={handleCopy}
     >
-      <div className="relative border border-gray-300 rounded-md p-4">
+      <div className="relative border border-neutral-300 rounded-md p-4">
         <h2 className="text-xl font-bold mb-2">
           Proverbs {chapter}:{verse}
         </h2>
