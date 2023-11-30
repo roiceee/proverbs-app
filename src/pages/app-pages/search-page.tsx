@@ -16,7 +16,13 @@ function SearchPage() {
 
   const [searchMode, setSearchMode] = useState<"text" | "keyword">("text");
 
+  const [ascending, setAscending] = useState(true);
+
   const search = searchParams.get("q");
+
+  const handleSort = () => {
+    setAscending(!ascending);
+  };
 
   if (!search) {
     return <div></div>;
@@ -67,7 +73,14 @@ function SearchPage() {
     return searchResult;
   };
 
-  const res = results();
+  const getRes = (): SearchResultType[] | undefined => {
+    if (!ascending) {
+      return results()?.reverse();
+    }
+    return results();
+  };
+
+  const res = getRes();
 
   return (
     <div>
@@ -100,6 +113,18 @@ function SearchPage() {
         <h2>
           Results for: <b>{`${search} (${res?.length} results)`}</b>
         </h2>
+      </div>
+
+      <div className="mt-6">
+        <span>
+          <b>Sort by:</b>
+        </span>
+        <button
+          onClick={handleSort}
+          className="btn btn-outline btn-neutral btn-sm ml-2"
+        >
+          {ascending ? "Ascending" : "Descending"}
+        </button>
       </div>
 
       <div className="mt-6">
@@ -159,7 +184,7 @@ function SearchPage() {
           </div>
         )}
       </div>
-      <ScrollToTopButton/>
+      <ScrollToTopButton />
     </div>
   );
 }
