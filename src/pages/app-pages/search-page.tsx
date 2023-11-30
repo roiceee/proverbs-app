@@ -40,7 +40,8 @@ function SearchPage() {
         const chapterNumber = parseInt(chapter.chapter);
 
         const verses = chapter.verses.filter((verse) => {
-          return verse.text.toLowerCase().includes(search.toLowerCase());
+          const regex = new RegExp("\\b" + search.toLowerCase() + "\\b", "i");
+          return regex.test(verse.text.toLowerCase());
         });
 
         verses.forEach((verse) => {
@@ -57,7 +58,8 @@ function SearchPage() {
         const chapterNumber = parseInt(chapter.chapter);
 
         const verses = chapter.verses.filter((verse) => {
-          return verse.keywords.toLowerCase().includes(search.toLowerCase());
+            const regex = new RegExp("\\b" + search.toLowerCase() + "\\b", "i");
+            return regex.test(verse.keywords.toLowerCase());
         });
 
         verses.forEach((verse) => {
