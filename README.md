@@ -1,5 +1,5 @@
 # Proverbs-App
-
+A requirement for Data Structures subject.
 ## Overview
 
 **Proverbs-App** is a web application that provides an interactive platform to explore the Book of Proverbs. The app is implemented using an AVL Tree to efficiently process searches for verses based on keywords or text.
