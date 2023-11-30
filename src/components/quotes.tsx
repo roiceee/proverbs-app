@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import quotes from "../assets/verses.json";
+import quotes from "../data/verses.json";
 
 interface QuoteType {
   chapter: number;

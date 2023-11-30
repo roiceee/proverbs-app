@@ -1,6 +1,6 @@
 import { Link, useSearchParams } from "react-router-dom";
 import SearchBar from "../../components/application/search-bar";
-import data from "../../assets/proverbs.json";
+import tree from "../../data/avl-tree";
 import { useState } from "react";
 import ScrollToTopButton from "../../components/scroll-to-top-button";
 
@@ -36,17 +36,17 @@ function SearchPage() {
     const searchResult: SearchResultType[] = [];
 
     if (searchMode === "text") {
-      data.forEach((chapter) => {
-        const chapterNumber = parseInt(chapter.chapter);
+      tree.forEach((node) => {
+        const chapterNumber = node!.key;
 
-        const verses = chapter.verses.filter((verse) => {
+        const verses = node.data?.filter((verse) => {
           const regex = new RegExp("\\b" + search.toLowerCase() + "\\b", "i");
           return regex.test(verse.text.toLowerCase());
         });
 
-        verses.forEach((verse) => {
+        verses?.forEach((verse) => {
           searchResult.push({
-            chapter: chapterNumber,
+            chapter: chapterNumber!,
             verse: parseInt(verse.verse),
             text: verse.text,
             keywords: verse.keywords,
@@ -54,17 +54,17 @@ function SearchPage() {
         });
       });
     } else {
-      data.forEach((chapter) => {
-        const chapterNumber = parseInt(chapter.chapter);
+      tree.forEach((node) => {
+        const chapterNumber = node!.key;
 
-        const verses = chapter.verses.filter((verse) => {
-            const regex = new RegExp("\\b" + search.toLowerCase() + "\\b", "i");
-            return regex.test(verse.keywords.toLowerCase());
+        const verses = node.data?.filter((verse) => {
+          const regex = new RegExp("\\b" + search.toLowerCase() + "\\b", "i");
+          return regex.test(verse.keywords.toLowerCase());
         });
 
-        verses.forEach((verse) => {
+        verses?.forEach((verse) => {
           searchResult.push({
-            chapter: chapterNumber,
+            chapter: chapterNumber!,
             verse: parseInt(verse.verse),
             text: verse.text,
             keywords: verse.keywords,

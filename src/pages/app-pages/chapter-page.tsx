@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import VerseDiv from "../../components/application/verse-div";
-import data from "../../assets/proverbs.json";
+import data from "../../data/proverbs.json";
 import NavButtons from "../../components/application/nav-buttons";
 
 import NotFoundDiv from "../../components/not-found-div";
