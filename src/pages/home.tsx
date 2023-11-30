@@ -5,7 +5,7 @@ function Home() {
   return (
     <main className="h-screen flex justify-center items-center px-2">
       <section className="prose text-center prose-lg md:prose-xl">
-        <h1>Proverbs</h1>
+        <h1 className="text-accent">Proverbs</h1>
         <div style={{ height: "200px" }}>
           <Quotes />
         </div>

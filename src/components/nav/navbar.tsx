@@ -28,7 +28,9 @@ function Navbar() {
         </div>
 
         <img src={"/logo.png"} width={30} />
-        <span className="text-2xl ml-4 font-semibold">Proverbs</span>
+        <span className="text-2xl ml-4 font-semibold text-accent">
+          Proverbs
+        </span>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -36,7 +38,6 @@ function Navbar() {
         </ul>
       </div>
       <div className="navbar-end">
-        
         <ThemeList />
       </div>
     </div>
