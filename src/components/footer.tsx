@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <div
-      className=" bottom-0 py-2"
+      className=" bottom-0 py-2 mt-4"
       style={{
         left: "0",
         right: "0",

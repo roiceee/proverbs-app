@@ -1,18 +1,16 @@
 import { useParams } from "react-router-dom";
-import VerseDiv from "./verse-div";
+import VerseDiv from "../../components/application/verse-div";
 import data from "../../assets/proverbs.json";
-import NavButtons from "./nav-buttons";
+import NavButtons from "../../components/application/nav-buttons";
 
 import NotFoundDiv from "../../components/not-found-div";
 
 function ChapterPage() {
   const { id } = useParams();
 
-  if (!id) {
-    return <div>Error Page</div>;
-  }
+  
 
-  if (isNaN(parseInt(id)) || !data[parseInt(id) - 1]) {
+  if (!id || isNaN(parseInt(id)) || !data[parseInt(id) - 1]) {
     //make this a 404 page and have a link to the home page
     return (
       <div className="flex justify-center items-center my-56">
@@ -44,12 +42,13 @@ function ChapterPage() {
           ))}
         </div>
 
-        <hr className="mt-6" />
-        <NavButtons
-          id={id}
-          disableNext={parseInt(id) === 31}
-          disablePrev={parseInt(id) === 1}
-        />
+        <div className="mt-10">
+          <NavButtons
+            id={id}
+            disableNext={parseInt(id) === 31}
+            disablePrev={parseInt(id) === 1}
+          />
+        </div>
       </section>
     </div>
   );

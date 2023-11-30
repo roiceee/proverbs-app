@@ -36,7 +36,7 @@ function NavButtons({ id, disableNext, disablePrev }: NavButtonsProps) {
       </Link>
       <div className="flex flex-row flex-wrap gap-3">
         <Link
-          to={"/app/" + (parseInt(id) - 1).toString()}
+          to={"/app/chapter/" + (parseInt(id) - 1).toString()}
           onClick={(e) => handleClick("prev", e)}
         >
           <button
@@ -48,7 +48,7 @@ function NavButtons({ id, disableNext, disablePrev }: NavButtonsProps) {
         </Link>
 
         <Link
-          to={"/app/" + (parseInt(id) + 1).toString()}
+          to={"/app/chapter/" + (parseInt(id) + 1).toString()}
           onClick={(e) => handleClick("next", e)}
         >
           <button

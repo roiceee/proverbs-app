@@ -12,6 +12,7 @@ import Footer from "./components/footer.tsx";
 import AppHome from "./pages/app-pages/app-home.tsx";
 import ChapterPage from "./pages/app-pages/chapter-page.tsx";
 import ScrollToTop from "./components/scroll-to-top.tsx";
+import SearchPage from "./pages/app-pages/search-page.tsx";
 
 function App() {
   useEffect(() => {
@@ -20,7 +21,7 @@ function App() {
 
   return (
     <main>
-      <ScrollToTop/>
+      <ScrollToTop />
       <Helmet>
         <title>Proverbs App | Home</title>
       </Helmet>
@@ -33,7 +34,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/app" element={<Application />}>
           <Route path="" element={<AppHome />} />
-          <Route path=":id" element={<ChapterPage />} />
+          <Route path="search" element={<SearchPage />} />
+          <Route path="chapter" element={<ChapterPage />}>
+            <Route path=":id" element={<ChapterPage />} />
+          </Route>
         </Route>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
