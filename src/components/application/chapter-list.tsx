@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import data from "../../assets/proverbs.json";
+import data from "../../data/proverbs.json";
 
 function ChapterList() {
   const history = useNavigate();

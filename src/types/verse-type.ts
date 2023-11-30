@@ -1,5 +1,5 @@
 type VerseData = {
-  verse: number;
+  verse: string;
   text: string;
   keywords: string;
 };
