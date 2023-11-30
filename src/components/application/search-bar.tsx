@@ -5,6 +5,7 @@ function SearchBar() {
   const router = useNavigate();
 
   const [searchText, setSearchText] = useState("");
+ 
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
