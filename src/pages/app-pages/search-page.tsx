@@ -2,6 +2,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import SearchBar from "../../components/application/search-bar";
 import data from "../../assets/proverbs.json";
 import { useState } from "react";
+import ScrollToTopButton from "../../components/scroll-to-top-button";
 
 type SearchResultType = {
   chapter: number;
@@ -158,6 +159,7 @@ function SearchPage() {
           </div>
         )}
       </div>
+      <ScrollToTopButton/>
     </div>
   );
 }
